@@ -1,0 +1,25 @@
+#uid: no suitable backend as of yet
+app_date:
+  BoundedDatetime:
+    min_datetime: "20200101"
+    max_datetime: "20230815"
+    distribution: norm
+app_method:
+  WeightedDiscrete:
+    population:
+      "1": 1 # in person
+      "2": 2 # telephone
+      "3": 5 # online is the most common
+      "4": 1 # via mail
+ct_guarantee:
+  MultipleResponse:
+    codes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    single_selection_codes:
+      - 999
+      - 977
+    single_selection_probability: 0.2
+ct_guarantee_ff:
+  LoremIpsumText:
+    blank_probability: 0.75 # 75% of these will be blank
+
+

@@ -1,0 +1,27 @@
+age:
+  BoundedNumerical:
+    distribution: norm
+    lower_bound: 18
+    upper_bound: 99
+    coerce_to_int: true
+employer:
+  LoremIpsumText:
+    lower_bound: 10
+    upper_bound: 30
+start_date:
+  BoundedDatetime:
+    # retaining default distribution and format
+    min_datetime: "20190101"
+    max_datetime: "20230815"
+income:
+  BoundedNumerical:
+    distribution: chi2
+    lower_bound: 10000
+    upper_bound: 200000
+    df: 10 # passed as distribution kwarg
+hispanic_or_latino:
+  WeightedDiscrete:
+    population:
+      # without the quotes, Yes and No are automatically parsed as bools
+      'Yes': 5
+      'No': 1
