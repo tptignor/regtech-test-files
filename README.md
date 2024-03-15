@@ -2,11 +2,25 @@
 
 This repository houses code for the `mock_data` package, a framework for generating mock datasets. Dataset specifics are defined via yaml and dynamically generated using the `read_yaml_spec` method of the `MockDataset` class. More on this below. 
 
-## Installation
+## Installation and Runtime
 
-This code has been tested on Python 3.10 only at the time of writing. It is recommended to create a Python virtual environment with version 3.10 when developing and or installing this framework. 
+Run these commands in the repo root directory using python 3.10 or greater.
 
-The code within this repository can be installed via Pip by running `pip install .` from the root of the repository. This will install a local copy of `mock_data` within your Python environment. Use the `-e` flag to install in _Development Mode_. See [this page](https://setuptools.pypa.io/en/latest/userguide/development_mode.html) for a discussion on this. 
+```
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+(.venv) $ pip install -r requirements.txt
+Collecting black (from -r requirements.txt (line 1))
+  Using cached black-24.2.0-cp312-cp312-macosx_10_9_x86_64.whl.metadata (74 kB)
+Collecting isort (from -r requirements.txt (line 2))
+  Using cached isort-5.13.2-py3-none-any.whl.metadata (12 kB)
+Collecting pandas (from -r requirements.txt (line 3))
+...
+(.venv) $ export PYTHONPATH=src
+$ python3 sbl_demo/main.py
+```
+
+This generates the output file **sbl_demo/fake_data.csv**, replacing any pre-existing copy.
 
 ## Architecture
 
